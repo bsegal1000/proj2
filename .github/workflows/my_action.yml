@@ -13,3 +13,17 @@ jobs:
     - name: echo hello
       run: |
         echo hello
+
+    - name: checkout code
+      uses: actions/checkout@v4
+        
+    - name: Config AWS creds
+      uses: aws-actions/configure-aws-credentials@v4
+      with:
+         role-to-assume: arn:aws:iam::031167617553:role/GithubOIDC
+         aws-region: us-east-1
+
+    - name: ls s3
+      run: |
+        aws s3 ls
+      
