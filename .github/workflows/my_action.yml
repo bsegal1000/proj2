@@ -22,6 +22,7 @@ jobs:
       uses: actions/checkout@v4
         
     - name: Config AWS creds
+      id: creds
       uses: aws-actions/configure-aws-credentials@v4
       with:
          role-to-assume: arn:aws:iam::031167617553:role/GithubOIDC
